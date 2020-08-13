@@ -1,22 +1,22 @@
 # depslib dependency file v1.0
-1597271414 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.cpp
+1597341841 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
 1597190071 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1597190071 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\main.cpp
+1597343020 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1597271715 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.h
+1597341841 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikManager.h"
 
-1597271414 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownik.h
+1597274442 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownik.h
 	<iostream>
 
-1597272347 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownikmanager.h
+1597341842 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownikmanager.h
 	<iostream>
 	<vector>
 	"Uzytkownik.h"
@@ -25,23 +25,24 @@
 	<fstream>
 	<sstream>
 
-1597272676 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzuzytkownikami.h
+1597343546 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzuzytkownikami.h
 	<iostream>
 	<vector>
 	<fstream>
+	<cstdlib>
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1597271715 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\metodypomocnicze.h
+1597274442 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\metodypomocnicze.h
 	<iostream>
 	<sstream>
 
-1597271414 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\metodypomocnicze.cpp
+1597274442 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1597272676 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzuzytkownikami.cpp
+1597343595 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1597272347 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownikmanager.cpp
+1597343547 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownikmanager.cpp
 	"UzytkownikManager.h"
 
