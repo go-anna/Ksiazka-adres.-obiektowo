@@ -13,7 +13,7 @@ void AdresatManager::dodajAdresata()
 
 Adresat AdresatManager::podajDaneNowegoAdresata()
 {
-    Adresat adresat;
+    Adresat adresat;int idZalogowanegoUzytkownika;
     string imie, nazwisko, numerTelefonu, email, adres;
     adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);

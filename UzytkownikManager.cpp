@@ -2,7 +2,7 @@
 
 void UzytkownikManager::rejestracjaUzytkownika()
 {
-     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
+    Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
     plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
@@ -23,12 +23,13 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
         cout << "Podaj login: ";
         cin>>login;
         uzytkownik.ustawLogin(login);
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    }
+    while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     string haslo;
     cout << "Podaj haslo: ";
     cin>>haslo;
-uzytkownik.ustawHaslo(haslo);
+    uzytkownik.ustawHaslo(haslo);
     return uzytkownik;
 }
 
@@ -42,32 +43,32 @@ int UzytkownikManager::pobierzIdNowegoUzytkownika()
 
 bool UzytkownikManager::czyIstniejeLogin(string login)
 {
-   for (int i=0; i<uzytkownicy.size(); i++)
-   {
-       if (uzytkownicy[i].pobierzLogin() ==login)
-       {
+    for (int i=0; i<uzytkownicy.size(); i++)
+    {
+        if (uzytkownicy[i].pobierzLogin() ==login)
+        {
             cout << endl << "Istnieje uzytkownik o takim loginie." << endl;
             return true;
-       }
-   }
+        }
+    }
 
     return false;
 }
 
 void UzytkownikManager::wypiszWszystkichUzytkownikow()
 {
-   for (int i=0; i<uzytkownicy.size(); i++)
-   {
-       cout <<uzytkownicy[i].pobierzId() <<endl;
-       cout <<uzytkownicy[i].pobierzLogin() <<endl;
-       cout <<uzytkownicy[i].pobierzHaslo() <<endl;
+    for (int i=0; i<uzytkownicy.size(); i++)
+    {
+        cout <<uzytkownicy[i].pobierzId() <<endl;
+        cout <<uzytkownicy[i].pobierzLogin() <<endl;
+        cout <<uzytkownicy[i].pobierzHaslo() <<endl;
 
-          }
+    }
 }
 
 void UzytkownikManager::wczytajUzytkownikowZPliku()
 {
-   uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 void UzytkownikManager::logowanieUzytkownika()
 {
@@ -105,7 +106,7 @@ void UzytkownikManager::logowanieUzytkownika()
     return;
 }
 
-void UzytkownikManager::wylogujUzytkownika()
+void UzytkownikManager::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
 }

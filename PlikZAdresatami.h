@@ -1,4 +1,3 @@
-
 #ifndef PLIKZADRESATAMI_H
 #define PLIKZADRESATAMI_H
 #include <iostream>
@@ -23,7 +22,11 @@ class PlikZAdresatami
     void zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(string nazwaTymczasowegoPlikuZRozszerzeniem, string nazwaPlikuZRozszerzeniem);
 
 public:
-   PlikZAdresatami(string NAZWAPLIKUZADRESATAMI): nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
+   PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) :
+        nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {
+        idOstatniegoAdresata = 0;
+        nazwaTymczasowegoPlikuZAdresatami = "Adresaci-tymczas.txt";
+    };
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     void dopiszAdresataDoPliku(Adresat adresat);
     int pobierzIdOstatniegoAdresata();
