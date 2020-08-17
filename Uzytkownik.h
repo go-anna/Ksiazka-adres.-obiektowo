@@ -20,4 +20,4 @@ public:
     string pobierzLogin();
     string pobierzHaslo();
 };
-#endif //UZYTKOWNIK_H
+#endif
