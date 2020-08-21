@@ -2,35 +2,36 @@
 #define ADRESATMANAGER_H
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
-#include "MetodyPomocnicze.h"
-#include <iostream>
 #include <vector>
-#include <fstream>
-#include <cstdlib>
 
 class AdresatManager
 {
-    const int idZalogowanegoUzytkownika;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector<Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-    Adresat podajDaneNowegoAdresata();
-    string wczytajLinie();
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     void wyswietlDaneAdresata(Adresat adresat);
-    string pobierzLiczbe(string tekst, int pozycjaZnaku);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
-    int wczytajLiczbeCalkowita();
-    int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 
 public:
-       AdresatManager (string nazwaPlikuZAdresatami, int IDZALOGOWANEGOUZYTKOWNIKA) :
-        plikZAdresatami(nazwaPlikuZAdresatami), idZalogowanegoUzytkownika(IDZALOGOWANEGOUZYTKOWNIKA)
+    AdresatManager(string nazwaPlikuZAdresatami,int idZalogowanegoUzytkownika)
+        :plikZAdresatami(nazwaPlikuZAdresatami),ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
     {
-        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-    };
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    }
     void dodajAdresata();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    Adresat podajDaneNowegoAdresata();
     void wyswietlWszystkichAdresatow();
+    void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    int usunAdresata();
+    int podajIdWybranegoAdresata();
+    void edytujAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneEdytowanegoAdresata(Adresat adresat);
+
+
+
 };
 
 #endif

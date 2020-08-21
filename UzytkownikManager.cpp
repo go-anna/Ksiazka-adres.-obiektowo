@@ -70,6 +70,7 @@ void UzytkownikManager::wczytajUzytkownikowZPliku()
 {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
+
 void UzytkownikManager::logowanieUzytkownika()
 {
     string login = "", haslo = "";
