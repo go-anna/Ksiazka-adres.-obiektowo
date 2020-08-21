@@ -7,12 +7,24 @@
 
 using namespace std;
 
+
 class MetodyPomocnicze
 {
 public:
-   static string konwerjsaIntNaString(int liczba);
-   static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-   static int konwersjaStringNaInt(string liczba);
+    MetodyPomocnicze();
+    static string konwersjaIntNaString(int liczba);
+    static string wczytajLinie();
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static int konwersjaStringNaInt(string liczba);
+    static char wczytajZnak();
+    static int wczytajLiczbeCalkowita();
+    static void usunOdczytywanyPlik(string nazwaPlikuZRozszerzeniem);
+    static void zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(string nazwaTymczasowegoPlikuZRozszerzeniem, string nazwaPlikuZRozszerzeniem);
+
+
+
+
+
 };
 
 #endif
