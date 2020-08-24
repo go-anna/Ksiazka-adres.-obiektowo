@@ -37,8 +37,6 @@ public:
     int usunAdresata();
 
 
-
-
 };
 
 #endif

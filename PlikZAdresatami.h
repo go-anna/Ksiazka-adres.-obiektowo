@@ -33,9 +33,6 @@ public:
     void edytujAdresataWPliku(Adresat adresat);
 
 
-
-
-
 };
 
 #endif
