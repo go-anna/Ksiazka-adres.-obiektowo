@@ -15,7 +15,6 @@ class PlikZUzytkownikami : public PlikTekstowy
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 
-
 public:
     PlikZUzytkownikami(string nazwaPliku) : PlikTekstowy(nazwaPliku) {};
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);

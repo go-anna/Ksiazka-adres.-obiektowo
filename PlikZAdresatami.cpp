@@ -138,6 +138,7 @@ string PlikZAdresatami::pobierzLiczbe(string tekst, int pozycjaZnaku)
     }
     return liczba;
 }
+
 int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
     return idOstatniegoAdresata;
@@ -149,6 +150,7 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
     int idAdresata = MetodyPomocnicze::konwersjaStringNaInt(pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
     return idAdresata;
 }
+
 void PlikZAdresatami::wczytajIdOstatniegoAdresata(int Id)
 {
     idOstatniegoAdresata=Id;

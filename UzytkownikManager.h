@@ -22,7 +22,7 @@ class UzytkownikManager
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami;
-   // int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+
 
 public:
     UzytkownikManager(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)

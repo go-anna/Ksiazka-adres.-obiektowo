@@ -111,14 +111,6 @@ void AdresatManager::wyszukajAdresatowPoImieniu()
     system("pause");
 }
 
-void AdresatManager::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
-{
-    if (iloscAdresatow == 0)
-        cout << endl << "W ksiazce adresowej nie ma adresatow z tymi danymi." << endl;
-    else
-        cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << iloscAdresatow << endl << endl;
-}
-
 void AdresatManager::wyszukajAdresatowPoNazwisku()
 {
     string nazwiskoPoszukiwanegoAdresata;
@@ -151,6 +143,13 @@ void AdresatManager::wyszukajAdresatowPoNazwisku()
     system("pause");
 }
 
+void AdresatManager::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
+{
+    if (iloscAdresatow == 0)
+        cout << endl << "W ksiazce adresowej nie ma adresatow z tymi danymi." << endl;
+    else
+        cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << iloscAdresatow << endl << endl;
+}
 
 int AdresatManager::podajIdWybranegoAdresata()
 {
