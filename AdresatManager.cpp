@@ -133,7 +133,7 @@ void AdresatManager::wyszukajAdresatowPoNazwisku()
                 iloscAdresatow++;
             }
         }
-         wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
+        wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
     }
     else
     {
@@ -159,7 +159,7 @@ int AdresatManager::podajIdWybranegoAdresata()
     return idWybranegoAdresata;
 }
 
-int AdresatManager::usunAdresata()
+void AdresatManager::usunAdresata()
 {
     int idUsuwanegoAdresata = 0;
 
@@ -181,16 +181,18 @@ int AdresatManager::usunAdresata()
             {
                 plikZAdresatami.usunAdresataZPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
+
+                if (idUsuwanegoAdresata == plikZAdresatami.pobierzIdOstatniegoAdresata())
+                    plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
-                return idUsuwanegoAdresata;
             }
             else
             {
                 cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
                 system("pause");
-                return 0;
             }
+            break;
         }
     }
     if (czyIstniejeAdresat == false)
@@ -198,7 +200,7 @@ int AdresatManager::usunAdresata()
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
-    return 0;
+
 }
 
 void AdresatManager::edytujAdresata()

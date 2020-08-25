@@ -24,7 +24,7 @@ public:
     void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
-    int usunAdresata();
+    void usunAdresata();
     int podajIdWybranegoAdresata();
     void edytujAdresata();
     char wybierzOpcjeZMenuEdycja();

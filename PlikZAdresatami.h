@@ -28,6 +28,7 @@ public:
     bool dopiszAdresataDoPliku(Adresat adresat);
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
+    void pobierzZPlikuIdOstatniegoAdresata();
     void wczytajIdOstatniegoAdresata(int Id);
     void usunAdresataZPliku(int idAdresata);
     void edytujAdresataWPliku(Adresat adresat);

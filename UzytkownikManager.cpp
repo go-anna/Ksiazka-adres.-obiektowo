@@ -21,15 +21,14 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
     do
     {
         cout << "Podaj login: ";
-        cin>>login;
-        uzytkownik.ustawLogin(login);
+        uzytkownik.ustawLogin(MetodyPomocnicze::wczytajLinie());
+
     }
     while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
-    string haslo;
     cout << "Podaj haslo: ";
-    cin>>haslo;
-    uzytkownik.ustawHaslo(haslo);
+    uzytkownik.ustawHaslo(MetodyPomocnicze::wczytajLinie());
+
     return uzytkownik;
 }
 
@@ -76,7 +75,7 @@ void UzytkownikManager::logowanieUzytkownika()
     string login = "", haslo = "";
 
     cout << "Podaj login: ";
-    cin >> login;
+    login = MetodyPomocnicze::wczytajLinie();
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
@@ -86,7 +85,7 @@ void UzytkownikManager::logowanieUzytkownika()
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                cin >> haslo;
+                 haslo = MetodyPomocnicze::wczytajLinie();
 
                 if (itr -> pobierzHaslo() == haslo)
                 {
@@ -116,7 +115,7 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    cin >> noweHaslo;
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
 
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
