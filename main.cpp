@@ -36,7 +36,6 @@ int main()
         }
         else {
 
-
             wybor = wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
@@ -84,6 +83,7 @@ char wybierzOpcjeZMenuGlownego()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
+    wybor = MetodyPomocnicze::wczytajLiczbeCalkowita();
 
     return wybor;
 }
@@ -107,6 +107,7 @@ char wybierzOpcjeZMenuUzytkownika()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
+    wybor = MetodyPomocnicze::wczytajLiczbeCalkowita();
 
     return wybor;
 }

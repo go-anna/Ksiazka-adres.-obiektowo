@@ -69,7 +69,7 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
     adresatManager->wyszukajAdresatowPoNazwisku();
 }
 
-int KsiazkaAdresowa::usunAdresata()
+void KsiazkaAdresowa::usunAdresata()
 {
     adresatManager->usunAdresata();
 }
