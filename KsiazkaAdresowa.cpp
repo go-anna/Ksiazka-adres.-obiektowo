@@ -54,11 +54,6 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
     return uzytkownikManager.czyUzytkownikJestZalogowany();
 }
 
-void KsiazkaAdresowa::wczytajAdresatowZPliku()
-{
-    adresatManager->wczytajAdresatowZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
-}
-
 void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
 {
     adresatManager->wyszukajAdresatowPoImieniu();

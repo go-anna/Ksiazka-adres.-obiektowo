@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1598388195 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.cpp
+1598484695 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
 1597707993 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1598389576 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\main.cpp
+1598483918 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1598388195 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.h
+1598395402 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikManager.h"
 	"AdresatManager.h"
@@ -49,10 +49,10 @@
 1598037909 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1598393805 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownikmanager.cpp
+1598395402 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\uzytkownikmanager.cpp
 	"UzytkownikManager.h"
 
-1598392032 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzadresatami.cpp
+1598569996 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzadresatami.cpp
 	"PlikZAdresatami.h"
 
 1598037909 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\adresat.cpp
@@ -61,16 +61,16 @@
 1598037909 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\adresat.h
 	<iostream>
 
-1598391065 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\adresatmanager.cpp
+1598484531 source:c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\adresatmanager.cpp
 	"AdresatManager.h"
 	"MetodyPomocnicze.h"
 
-1598388195 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\adresatmanager.h
+1598570543 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\adresatmanager.h
 	"Adresat.h"
 	"PlikZAdresatami.h"
 	<vector>
 
-1598391872 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzadresatami.h
+1598570543 c:\users\joanna\desktop\c++\ksiazka adresowa obiektowo\plikzadresatami.h
 	<iostream>
 	<vector>
 	<fstream>

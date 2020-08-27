@@ -1,7 +1,5 @@
 #include "PlikZAdresatami.h"
 
-
-
 bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
@@ -16,16 +14,20 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
             {
                 plikTekstowy << liniaZDanymiAdresata;
             }
-            else
-            {
-                plikTekstowy << endl << liniaZDanymiAdresata ;
-            }
-            plikTekstowy.close();
-            return true;
-        }
         else
-        return false;
-}
+        {
+            plikTekstowy << endl << liniaZDanymiAdresata ;
+        }
+        idOstatniegoAdresata++;
+        plikTekstowy.close();
+        }
+    else
+    {
+        cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
+    }
+    plikTekstowy.close();
+    system("pause");
+  }
 
 string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat)
 {
@@ -70,9 +72,9 @@ vector<Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(i
     if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-        return adresaci;
+
     }
-    else
+
         return adresaci;
 }
 
@@ -89,7 +91,7 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
     string pojedynczaDanaAdresata = "";
     int numerPojedynczejDanejAdresata = 1;
 
-    for (int pozycjaZnaku = 0; pozycjaZnaku < daneAdresataOddzielonePionowymiKreskami.length(); pozycjaZnaku++)
+    for (unsigned int pozycjaZnaku = 0; pozycjaZnaku < daneAdresataOddzielonePionowymiKreskami.length(); pozycjaZnaku++)
     {
         if (daneAdresataOddzielonePionowymiKreskami[pozycjaZnaku] != '|')
         {
@@ -104,7 +106,6 @@ Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionow
                 break;
             case 2:
                 adresat.ustawIdUzytkownika(atoi(pojedynczaDanaAdresata.c_str()));
-                break;
             case 3:
                 adresat.ustawImie(pojedynczaDanaAdresata);
                 break;
@@ -151,52 +152,40 @@ int PlikZAdresatami::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(strin
     return idAdresata;
 }
 
-void PlikZAdresatami::wczytajIdOstatniegoAdresata(int Id)
-{
-    idOstatniegoAdresata=Id;
-}
-
 void PlikZAdresatami::usunAdresataZPliku(int idAdresata)
 {
     int numerLiniiWPlikuTekstowym = 1;
-    int numerUsuwanejLinii =0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     fstream plikTekstowy,tymczasowyPlikTekstowy;
-    string nazwaTymczasowegoPlikuZAdresatami="temp.txt";
+    string nazwaTymczasowegoPlikuZAdresatami="tymczas.txt";
+
     plikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
 
     if (plikTekstowy.good() == true && idAdresata != 0)
     {
-        while(getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
         {
             if(idAdresata == pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
             {
-                tymczasowyPlikTekstowy<<"";
-                numerUsuwanejLinii=numerLiniiWPlikuTekstowym;
+                numerLiniiWPlikuTekstowym --;
             }
-            else if(numerLiniiWPlikuTekstowym==1)
-                tymczasowyPlikTekstowy <<daneJednegoAdresataOddzielonePionowymiKreskami;
-            else if (numerUsuwanejLinii==numerLiniiWPlikuTekstowym && numerLiniiWPlikuTekstowym==2)
-                tymczasowyPlikTekstowy <<daneJednegoAdresataOddzielonePionowymiKreskami;
-            else
-                tymczasowyPlikTekstowy<<endl<<daneJednegoAdresataOddzielonePionowymiKreskami;
-
-          numerLiniiWPlikuTekstowym++;
-          numerUsuwanejLinii++;
-                }
-
+            else if (numerLiniiWPlikuTekstowym == 1)
+                tymczasowyPlikTekstowy << daneJednegoAdresataOddzielonePionowymiKreskami;
+            else if (numerLiniiWPlikuTekstowym > 1)
+                tymczasowyPlikTekstowy << endl << daneJednegoAdresataOddzielonePionowymiKreskami;
+            numerLiniiWPlikuTekstowym ++;
+        }
         plikTekstowy.close();
         tymczasowyPlikTekstowy.close();
+
         MetodyPomocnicze::usunOdczytywanyPlik(pobierzNazwePliku());
         MetodyPomocnicze::zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(nazwaTymczasowegoPlikuZAdresatami, pobierzNazwePliku());
-
     }
 }
 
 void PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
 {
-    int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
@@ -205,8 +194,8 @@ void PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
     if (plikTekstowy.good() == true)
     {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {}
-            daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-            plikTekstowy.close();
+        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+        plikTekstowy.close();
     }
     else
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
@@ -217,11 +206,9 @@ void PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata()
     }
     else
     {
-       idOstatniegoAdresata;
+        idOstatniegoAdresata = 0;
     }
-
 }
-
 
 void PlikZAdresatami::edytujAdresataWPliku(Adresat adresat)
 {
@@ -229,7 +216,7 @@ void PlikZAdresatami::edytujAdresataWPliku(Adresat adresat)
     int numerLiniiWPlikuTekstowym = 1;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     fstream plikTekstowy,tymczasowyPlikTekstowy;
-    string nazwaTymczasowegoPlikuZAdresatami="temp.txt";
+    string nazwaTymczasowegoPlikuZAdresatami="tymczas.txt";
 
 
     plikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);

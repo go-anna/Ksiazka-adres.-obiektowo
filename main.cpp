@@ -11,6 +11,7 @@ int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
    char wybor;
+
    while(true)
    {
 
@@ -83,7 +84,7 @@ char wybierzOpcjeZMenuGlownego()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
-    wybor = MetodyPomocnicze::wczytajLiczbeCalkowita();
+
 
     return wybor;
 }
@@ -107,7 +108,7 @@ char wybierzOpcjeZMenuUzytkownika()
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     wybor = MetodyPomocnicze::wczytajZnak();
-    wybor = MetodyPomocnicze::wczytajLiczbeCalkowita();
+
 
     return wybor;
 }

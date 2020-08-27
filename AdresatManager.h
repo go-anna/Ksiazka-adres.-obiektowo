@@ -21,7 +21,6 @@ public:
     void dodajAdresata();
     Adresat podajDaneNowegoAdresata();
     void wyswietlWszystkichAdresatow();
-    void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     void usunAdresata();
@@ -29,8 +28,6 @@ public:
     void edytujAdresata();
     char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneEdytowanegoAdresata(Adresat adresat);
-
-
 
 };
 

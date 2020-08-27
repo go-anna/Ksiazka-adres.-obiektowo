@@ -23,13 +23,12 @@ class PlikZAdresatami : public PlikTekstowy
 public:
         PlikZAdresatami(string nazwaPliku): PlikTekstowy(nazwaPliku) {
         idOstatniegoAdresata = 0;
-        nazwaTymczasowegoPlikuZAdresatami = "Adresaci-tymczas.txt";
+        nazwaTymczasowegoPlikuZAdresatami = "tymczas.txt";
     };
     bool dopiszAdresataDoPliku(Adresat adresat);
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
     void pobierzZPlikuIdOstatniegoAdresata();
-    void wczytajIdOstatniegoAdresata(int Id);
     void usunAdresataZPliku(int idAdresata);
     void edytujAdresataWPliku(Adresat adresat);
 
